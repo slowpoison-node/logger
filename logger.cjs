@@ -32,8 +32,21 @@ class Logger {
     return Logger.singleton;
   }
 
-  throwError(msg, cause) {
-    var error = new Error(msg, {cause: cause});
+  /**
+   * Logs and throws an error if errCause is not null 
+   */
+  throwIfError(msg, errCause) {
+    if (errCause == null)
+      return;
+
+    throwError(msg, errCause);
+  }
+
+  /**
+   * Logs the given cause and throws the error cause
+   */
+  throwError(msg, errCause) {
+    var error = new Error(msg, {cause: errCause});
     this.error(msg, error);
     throw error;
   }
