@@ -2,6 +2,7 @@
   "name": "@slowpoison/logger",
   "version": "0.0.1",
   "description": "A simple wrapper for logging that support convenience functions.",
+  "access": "public",
   "main": "logger.js",
   "scripts": {
     "test": "test"
